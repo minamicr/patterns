@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class IPI implements Tax{
-  private static final double IPI_VALUE = 0.1;
+  private static final double IPI_TAX = 0.1;
 
   @Override
   public TaxType taxType() {
@@ -14,7 +14,7 @@ public class IPI implements Tax{
 
   @Override
   public double calculateTax(double value) {
-    System.out.println("Strategy - Calculando valor do IPI com taxa " + IPI_VALUE);
-    return value * IPI_VALUE;
+    System.out.println("Strategy - Calculando valor do IPI com taxa " + IPI_TAX);
+    return value * IPI_TAX;
   }
 }

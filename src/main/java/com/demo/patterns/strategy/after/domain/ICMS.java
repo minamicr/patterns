@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ICMS implements Tax {
-  private static final double ICMS_VALUE = 0.15;
+  private static final double ICMS_TAX = 0.15;
 
   @Override
   public TaxType taxType() {
@@ -14,7 +14,7 @@ public class ICMS implements Tax {
 
   @Override
   public double calculateTax(double value) {
-    System.out.println("Strategy - Calculando ICMS com taxa de " + ICMS_VALUE);
-    return value * ICMS_VALUE;
+    System.out.println("Strategy - Calculando ICMS com taxa de " + ICMS_TAX);
+    return value * ICMS_TAX;
   }
 }

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class IOF implements Tax{
-  private static final double IOF_VALUE = 0.13;
+  private static final double IOF_TAX = 0.13;
 
   @Override
   public TaxType taxType() {
@@ -14,7 +14,7 @@ public class IOF implements Tax{
 
   @Override
   public double calculateTax(double value) {
-    System.out.println("Strategy - Calculando IOF com taxa de " + IOF_VALUE);
-    return value * IOF_VALUE;
+    System.out.println("Strategy - Calculando IOF com taxa de " + IOF_TAX);
+    return value * IOF_TAX;
   }
 }
