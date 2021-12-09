@@ -14,7 +14,7 @@ public class TaxCalculator {
       System.out.println("Calculando ICMS com taxa de " + ICMS_TAX);
       return value * ICMS_TAX;
     } else if (taxType.equals(TaxType.IOF)){
-      System.out.println("Calculando ICMS com taxa de " + IOF_TAX);
+      System.out.println("Calculando IOF com taxa de " + IOF_TAX);
       return value * IOF_TAX;
     } else {
       return 0;

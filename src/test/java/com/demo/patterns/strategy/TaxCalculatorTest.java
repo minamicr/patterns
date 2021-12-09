@@ -1,5 +1,6 @@
 package com.demo.patterns.strategy;
 
+import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.BDDAssertions.then;
 
 import com.demo.patterns.strategy.after.service.TaxCalculatorStrategy;
@@ -11,9 +12,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class TaxCalculatorTest {
   @Autowired
-  //TaxCalculator taxCalculator;
-  TaxCalculatorStrategy taxCalculator;
-
+  TaxCalculator taxCalculator;
+  //TaxCalculatorStrategy taxCalculator;
 
   @Test
   void givenICMSTaxWhenCalculateTaxThenReturnICMSValue(){
@@ -27,19 +27,12 @@ class TaxCalculatorTest {
     then(valueIOF).isEqualTo(13);
   }
 
-  /*
+/*
   @Test
-  void givenIPITaxWhenCalculateTaxThenReturnIPIValue(){
-    double valueIPI = taxCalculator.calculateTax(TaxType.IPI, 100);
-    then(valueIPI).isEqualTo(10);
-  }
-
-  @Test
-  void givenTipoImpostoInvalidoWhenCalcularThenLancarExcecao(){
+  void givenInvalidTaxTypeWhenCalculateTaxThenThrowException(){
     assertThatCode(() -> taxCalculator.calculateTax(
         null, 0)).hasMessageContaining("Tipo de Imposto não encontrado");
   }
-
-   */
+*/
 
 }
