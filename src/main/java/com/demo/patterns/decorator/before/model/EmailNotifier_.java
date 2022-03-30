@@ -1,0 +1,20 @@
+package com.demo.patterns.decorator.before.model;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class EmailNotifier_ {
+  private String message;
+
+  public void setMessage(String message) {
+    this.message = message;
+  }
+
+  public String getMessage() {
+    return message;
+  }
+
+  public void sendMessage() {
+    System.out.println(String.format("Mensagem [%s] enviada por e-mail", message));
+  }
+}

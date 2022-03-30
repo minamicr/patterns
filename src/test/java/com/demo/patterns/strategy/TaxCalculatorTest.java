@@ -1,9 +1,8 @@
 package com.demo.patterns.strategy;
 
-import static org.assertj.core.api.Assertions.assertThatCode;
+
 import static org.assertj.core.api.BDDAssertions.then;
 
-import com.demo.patterns.strategy.after.service.TaxCalculatorStrategy;
 import com.demo.patterns.strategy.before.service.TaxCalculator;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
