@@ -4,14 +4,17 @@ import com.demo.patterns.factory.enumeration.Generation;
 import com.demo.patterns.factory.enumeration.Level;
 
 public abstract class IPhone {
-  private String deviceName;
 
   public abstract String getHardware();
   public abstract Generation getGeneration();
   public abstract Level getLevel();
 
   public String getDeviceName(){
-    return this.deviceName;
+    return getClass().getSimpleName();
+  }
+
+  public String getDeviceModel(){
+    return getGeneration().toString() + " " + getLevel().toString();
   }
 
   public String certificates() {

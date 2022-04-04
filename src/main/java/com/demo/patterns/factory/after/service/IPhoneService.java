@@ -6,12 +6,14 @@ import com.demo.patterns.factory.enumeration.Level;
 import org.springframework.stereotype.Service;
 
 @Service
-public class IPhoneServiceFactory {
+public class IPhoneService {
   IPhoneSimpleFactory factory;
 
   public IPhone orderIPhone(Generation generation, Level level) {
     IPhone device = factory.createIPhone(generation, level);
 
+    System.out.println(device.getDeviceName());
+    System.out.println(device.getDeviceModel() + " - Factory");
     System.out.println(device.getHardware());
     System.out.println(device.certificates());
     System.out.println(device.pack());

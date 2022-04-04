@@ -29,6 +29,8 @@ public class IPhoneService_ {
       }
     }
 
+    System.out.println(device.getDeviceName());
+    System.out.println(device.getDeviceModel());
     System.out.println(device.getHardware());
     System.out.println(device.certificates());
     System.out.println(device.pack());
