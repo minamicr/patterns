@@ -40,26 +40,19 @@ class IPhoneServiceTest {
   }
 
   @Test
-  void givenGenerationXLevelHighEndWhenOrderIPhoneOriginalClassThenReturnIPhoneXSMax(){
-    IPhone device = iPhoneService_.orderIPhone(Generation.IPHONE_X, Level.HIGH_END);
-    then(device.getHardware()).contains("6.5in", "A12", "4Gb", "512Gb");
-    then(device).isExactlyInstanceOf(IPhoneXSMax.class);
-  }
-
-  @Test
-  void givenGeneration11LevelHighEndWhenOrderIPhoneOriginalClassThenReturnIPhone11Pro(){
-    IPhone device = iPhoneService_.orderIPhone(Generation.IPHONE_11, Level.HIGH_END);
-    then(device.getHardware()).contains("6.5in", "A13", "4Gb", "512Gb");
-    then(device).isExactlyInstanceOf(IPhone11Pro.class);
-  }
-
-  @Test
   void givenGenerationXLevelStandardWhenOrderIPhoneThenReturnIPhoneX(){
     when(factory.createIPhone(any(Generation.class), any(Level.class)))
         .thenReturn(new IPhoneX());
     IPhone device = iPhoneService.orderIPhone(Generation.IPHONE_X, Level.STANDARD);
     then(device.getHardware()).contains("5.8in", "A11", "3Gb", "256Gb");
     then(device).isExactlyInstanceOf(IPhoneX.class);
+  }
+
+  @Test
+  void givenGenerationXLevelHighEndWhenOrderIPhoneOriginalClassThenReturnIPhoneXSMax(){
+    IPhone device = iPhoneService_.orderIPhone(Generation.IPHONE_X, Level.HIGH_END);
+    then(device.getHardware()).contains("6.5in", "A12", "4Gb", "512Gb");
+    then(device).isExactlyInstanceOf(IPhoneXSMax.class);
   }
 
   @Test
@@ -71,6 +64,15 @@ class IPhoneServiceTest {
     then(device).isExactlyInstanceOf(IPhoneXSMax.class);
   }
 
+
+  @Test
+  void givenGeneration11LevelHighEndWhenOrderIPhoneOriginalClassThenReturnIPhone11Pro(){
+    IPhone device = iPhoneService_.orderIPhone(Generation.IPHONE_11, Level.HIGH_END);
+    then(device.getHardware()).contains("6.5in", "A13", "4Gb", "512Gb");
+    then(device).isExactlyInstanceOf(IPhone11Pro.class);
+  }
+
+
   @Test
   void givenGeneration11LevelHighEndWhenOrderIPhoneThenReturnIPhone11Pro(){
     when(factory.createIPhone(any(Generation.class), any(Level.class)))
@@ -80,6 +82,7 @@ class IPhoneServiceTest {
     then(device).isExactlyInstanceOf(IPhone11Pro.class);
 
   }
+
 
 
 }
