@@ -3,7 +3,7 @@ package com.demo.patterns.strategy;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
-import com.demo.patterns.strategy.before.service.TaxCalculator;
+import com.demo.patterns.strategy.after.service.TaxCalculatorStrategy;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,8 +11,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class TaxCalculatorTest {
   @Autowired
-  TaxCalculator taxCalculator;
-  //TaxCalculatorStrategy taxCalculator;
+  //TaxCalculator taxCalculator;
+  TaxCalculatorStrategy taxCalculator;
 
   @Test
   void givenICMSTaxWhenCalculateTaxThenReturnICMSValue(){
@@ -26,6 +26,11 @@ class TaxCalculatorTest {
     then(valueIOF).isEqualTo(13);
   }
 
+  @Test
+  void givenIRTaxWhenCalculateTaxThenReturnIRValue(){
+    double valueIR = taxCalculator.calculateTax(TaxType.IR, 100);
+    then(valueIR).isEqualTo(5);
+  }
 /*
   @Test
   void givenInvalidTaxTypeWhenCalculateTaxThenThrowException(){
